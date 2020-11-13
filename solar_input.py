@@ -21,59 +21,16 @@ def read_space_objects_data_from_file(input_filename):
 
             object_type = line.split()[0].lower()
             if object_type == "star":
-                star = Star()
-                parse_star_parameters(line, star)
+                star = Star(line)
                 objects.append(star)
             elif object_type == "planet":
-                planet = Planet()
-                parse_planet_parameters(line, planet)
+                planet = Planet(line)
                 objects.append(planet)
             else:
                 print("Unknown space object")
 
     return [DrawableObject(obj) for obj in objects]
 
-
-def parse_star_parameters(line, star):
-    """Считывает данные о звезде из строки.
-
-    Входная строка должна иметь слеюущий формат:
-
-    Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
-    Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
-
-    Пример строки:
-
-    Star 10 red 1000 1 2 3 4
-
-    Параметры:
-
-    **line** — строка с описание звезды.
-
-    **star** — объект звезды.
-    """
-    pass  # FIXME: допишите парсер
-
-def parse_planet_parameters(line, planet):
-    """Считывает данные о планете из строки.
-    Входная строка должна иметь слеюущий формат:
-
-    Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
-    Здесь (x, y) — координаты планеты, (Vx, Vy) — скорость.
-
-    Пример строки:
-
-    Planet 10 red 1000 1 2 3 4
-
-    Параметры:
-
-    **line** — строка с описание планеты.
-
-    **planet** — объект планеты.
-    """
-    pass  # FIXME: допишите парсер
 
 def write_space_objects_data_to_file(output_filename, space_objects):
     """Сохраняет данные о космических объектах в файл.
