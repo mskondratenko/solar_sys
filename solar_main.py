@@ -65,7 +65,6 @@ def open_file():
     Считанные объекты сохраняются в глобальный список space_objects
     """
     global space_objects
-    global browser
     global model_time
 
     model_time = 0.0
@@ -89,7 +88,6 @@ def slider_reaction(event):
     time_scale = slider_to_real(event.el.get_value())
 
 def init_ui(screen):
-    global browser
     slider = thorpy.SliderX(100, (-10, 10), "Simulation speed")
     slider.user_func = slider_reaction
     button_stop = thorpy.make_button("Quit", func=stop_execution)
