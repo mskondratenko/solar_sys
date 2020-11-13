@@ -11,8 +11,9 @@ class Star:
     def __init__(self, line):
         self.type, self.R, self.color, self.m, self.x, \
         self.y, self.Vx, self.Vy = line.split()
-        self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy \
-            = int(self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy)
+        for el in (self.R, self.color, self.m, self.x,
+                   self.y, self.Vx, self.Vy):
+            el = int(el)
 
         self.Fx = 0
         """Сила по оси **x**"""
@@ -30,12 +31,13 @@ class Planet:
     def __init__(self):
         self.type, self.R, self.color, self.m, self.x, \
         self.y, self.Vx, self.Vy = line.split()
-        self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy \
-            = int(self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy)
-
+        for el in (self.R, self.color, self.m, self.x,
+                   self.y, self.Vx, self.Vy):
+            el = int(el)
 
         self.Fx = 0
         """Сила по оси **x**"""
 
         self.Fy = 0
         """Сила по оси **y**"""
+
