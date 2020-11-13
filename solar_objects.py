@@ -8,35 +8,17 @@ class Star:
     а также визуальный радиус звезды в пикселах и её цвет.
     """
 
-    type = "star"
-    """Признак объекта звезды"""
+    def __init__(self, line):
+        self.type, self.R, self.color, self.m, self.x, \
+        self.y, self.Vx, self.Vy = line.split()
+        self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy \
+            = int(self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy)
 
-    m = 1
-    """Масса звезды"""
+        self.Fx = 0
+        """Сила по оси **x**"""
 
-    x = 0
-    """Координата по оси **x**"""
-
-    y = 0
-    """Координата по оси **y**"""
-
-    Vx = 0
-    """Скорость по оси **x**"""
-
-    Vy = 0
-    """Скорость по оси **y**"""
-
-    Fx = 0
-    """Сила по оси **x**"""
-
-    Fy = 0
-    """Сила по оси **y**"""
-
-    R = 5
-    """Радиус звезды"""
-
-    color = "red"
-    """Цвет звезды"""
+        self.Fy = 0
+        """Сила по оси **y**"""
 
 
 class Planet:
@@ -45,32 +27,15 @@ class Planet:
     а также визуальный радиус планеты в пикселах и её цвет
     """
 
-    type = "planet"
-    """Признак объекта планеты"""
+    def __init__(self):
+        self.type, self.R, self.color, self.m, self.x, \
+        self.y, self.Vx, self.Vy = line.split()
+        self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy \
+            = int(self.R, self.color, self.m, self.x, self.y, self.Vx, self.Vy)
 
-    m = 1
-    """Масса планеты"""
 
-    x = 0
-    """Координата по оси **x**"""
+        self.Fx = 0
+        """Сила по оси **x**"""
 
-    y = 0
-    """Координата по оси **y**"""
-
-    Vx = 0
-    """Скорость по оси **x**"""
-
-    Vy = 0
-    """Скорость по оси **y**"""
-
-    Fx = 0
-    """Сила по оси **x**"""
-
-    Fy = 0
-    """Сила по оси **y**"""
-
-    R = 5
-    """Радиус планеты"""
-
-    color = "green"
-    """Цвет планеты"""
+        self.Fy = 0
+        """Сила по оси **y**"""
