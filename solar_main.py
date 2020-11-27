@@ -68,8 +68,9 @@ def open_file():
     global model_time
 
     model_time = 0.0
-    in_filename = "double_star.txt"
+    in_filename = "solar_system.txt"
     space_objects = read_space_objects_data_from_file(in_filename)
+    print(space_objects)
     max_distance = max([max(abs(obj.obj.x), abs(obj.obj.y)) for obj in space_objects])
     calculate_scale_factor(max_distance)
 
@@ -158,7 +159,7 @@ def main():
         last_time = cur_time
         drawer.update(space_objects, box)
         time.sleep(1.0 / 60)
-
+    write_space_objects_data_to_file("result.txt", space_objects)
     print('Modelling finished!')
 
 if __name__ == "__main__":
